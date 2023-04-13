@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  @apply bg-slate-200;
+}
+
+.logo {
+  background: white;
+  background: linear-gradient(
+    to top left,
+    #93a8af 29%,
+    #15a2ae 62%,
+    #7b60b9 83%
+  );
+  width: fit-content;
+  font-weight: bold;
+  white-space: pre-line;
+  line-height: 1;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
