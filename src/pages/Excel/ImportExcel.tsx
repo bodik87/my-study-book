@@ -2,17 +2,17 @@ import { useState } from "react";
 import * as XLSX from "xlsx";
 
 export default function ImportExcel() {
-  const [excelFile, setExcelFile] = useState(null);
-  const [excelFileError, setExcelFileError] = useState(null);
+  const [excelFile, setExcelFile] = useState<any>(null);
+  const [excelFileError, setExcelFileError] = useState<string | null>(null);
 
-  const [excelData, setExcelData] = useState(null);
+  const [excelData, setExcelData] = useState<any>(null);
 
   const fileTypes = [
     "application/vnd.ms-excel",
     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
   ];
 
-  const handleFile = (e) => {
+  const handleFile = (e: any) => {
     let selectedFile = e.target.files[0];
     if (selectedFile) {
       if (selectedFile && fileTypes.includes(selectedFile.type)) {
@@ -31,14 +31,13 @@ export default function ImportExcel() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     if (excelFile !== null) {
       const workbook = XLSX.read(excelFile, { type: "buffer" });
       const worksheetName = workbook.SheetNames[0];
       const worksheet = workbook.Sheets[worksheetName];
       const data = XLSX.utils.sheet_to_json(worksheet);
-      console.log(data);
       setExcelData(data);
     } else {
       setExcelData(null);
@@ -47,7 +46,7 @@ export default function ImportExcel() {
 
   const FILE = "http://...";
 
-  const downloadFile = (url) => {
+  const downloadFile = (url: string) => {
     const aTag = document.createElement("a");
     aTag.href = url;
     aTag.setAttribute("download", "file.json");
@@ -106,7 +105,7 @@ export default function ImportExcel() {
   );
 }
 
-const Data = ({ excelData }) => {
+const Data = ({ excelData }: any) => {
   return (
     <div className="w-full relative overflow-x-auto shadow-md sm:rounded-lg my-4">
       <table className="w-full text-sm text-left text-gray-500">
@@ -124,7 +123,7 @@ const Data = ({ excelData }) => {
           </tr>
         </thead>
         <tbody>
-          {excelData.map((bodyData) => (
+          {excelData.map((bodyData: any) => (
             <tr key={bodyData.Id} className="bg-white border-b">
               <th className="px-6 py-4">{bodyData.Id}</th>
               <th className="px-6 py-4">{bodyData.Title}</th>

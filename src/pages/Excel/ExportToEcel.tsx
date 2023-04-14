@@ -1,15 +1,16 @@
 import React from "react";
 import * as XLSX from "xlsx";
 
+const data = [
+  { id: 1, title: "Молоко", Price: 121 },
+  { id: 2, title: "Сир", Price: 452 },
+  { id: 3, title: "Цукор", Price: 343, Col: "weqeqew" },
+];
+
 export default function ExportToEcel() {
-  const data = [
-    { id: 1, title: "Молоко", Price: 121 },
-    { id: 2, title: "Сир", Price: 452 },
-    { id: 3, title: "Цукор", Price: 343, Col: "weqeqew" },
-  ];
   // SON.stringify(excelData);
 
-  const downloadExcel = (data) => {
+  const downloadExcel = (data: any) => {
     const worksheet = XLSX.utils.json_to_sheet(data);
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet1-Лист1");
