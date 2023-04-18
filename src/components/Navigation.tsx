@@ -141,6 +141,7 @@ export default function Navigation() {
                 </Disclosure>
               </Menu.Item>
 
+              {/* DESIGN */}
               <Menu.Item>
                 <Disclosure>
                   {({ open }) => (
@@ -156,11 +157,25 @@ export default function Navigation() {
                       <Disclosure.Panel className="pl-2 text-sm text-gray-500">
                         <button
                           onClick={() =>
-                            navigate(`/`, { state: { key: "Temp" } })
+                            navigate(`/design/YouTubeMobile`, {
+                              state: { key: "Temp" },
+                            })
                           }
                           className={`bg-emerald-50 hover:bg-emerald-100 text-gray-900 flex w-full items-center rounded-md px-2 py-2 text-sm transition-all`}
                         >
-                          Link
+                          YouTube Mobile Layout
+                        </button>
+                      </Disclosure.Panel>
+                      <Disclosure.Panel className="pl-2 text-sm text-gray-500">
+                        <button
+                          onClick={() =>
+                            navigate(`/design/MobileApp_1`, {
+                              state: { key: "Temp" },
+                            })
+                          }
+                          className={`bg-emerald-50 hover:bg-emerald-100 text-gray-900 flex w-full items-center rounded-md px-2 py-2 text-sm transition-all`}
+                        >
+                          MobileApp_1
                         </button>
                       </Disclosure.Panel>
                     </>
