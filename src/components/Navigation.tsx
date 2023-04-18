@@ -65,7 +65,7 @@ export default function Navigation() {
                           }
                           className={`bg-blue-50 hover:bg-blue-100 text-gray-900 flex w-full items-center rounded-md px-2 py-2 text-sm transition-all`}
                         >
-                          Edit
+                          Link
                         </button>
                       </Disclosure.Panel>
                     </>
@@ -101,6 +101,74 @@ export default function Navigation() {
               </Menu.Item>
 
               <Menu.Item>
+                <Disclosure>
+                  {({ open }) => (
+                    <>
+                      <Disclosure.Button className="flex w-full justify-between rounded-lg bg-[#217346] px-4 py-2 text-left text-sm font-medium text-white hover:bg-[#308f5b] transition-all">
+                        <span>Excel</span>
+                        <ChevronUpIcon
+                          className={`${
+                            open ? "rotate-180 transform" : ""
+                          } h-5 w-5 text-white`}
+                        />
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="pl-2 text-sm text-gray-500">
+                        <button
+                          onClick={() =>
+                            navigate(`/excel/export`, {
+                              state: { key: "Temp" },
+                            })
+                          }
+                          className={`bg-[#308f5b] hover:bg-[#4dac77] text-white flex w-full items-center rounded-md px-2 py-2 text-sm transition-all`}
+                        >
+                          Export to Excel
+                        </button>
+                      </Disclosure.Panel>
+                      <Disclosure.Panel className="pl-2 text-sm text-gray-500">
+                        <button
+                          onClick={() =>
+                            navigate(`/excel/import`, {
+                              state: { key: "Temp" },
+                            })
+                          }
+                          className={`bg-[#308f5b] hover:bg-[#4dac77] text-white flex w-full items-center rounded-md px-2 py-2 text-sm transition-all`}
+                        >
+                          Import Excel
+                        </button>
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
+              </Menu.Item>
+
+              <Menu.Item>
+                <Disclosure>
+                  {({ open }) => (
+                    <>
+                      <Disclosure.Button className="flex w-full justify-between rounded-lg bg-emerald-100 px-4 py-2 text-left text-sm font-medium text-emerald-900 hover:bg-emerald-200 transition-all">
+                        <span>Design</span>
+                        <ChevronUpIcon
+                          className={`${
+                            open ? "rotate-180 transform" : ""
+                          } h-5 w-5 text-emerald-500`}
+                        />
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="pl-2 text-sm text-gray-500">
+                        <button
+                          onClick={() =>
+                            navigate(`/`, { state: { key: "Temp" } })
+                          }
+                          className={`bg-emerald-50 hover:bg-emerald-100 text-gray-900 flex w-full items-center rounded-md px-2 py-2 text-sm transition-all`}
+                        >
+                          Link
+                        </button>
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
+              </Menu.Item>
+
+              <Menu.Item>
                 {({ active }) => (
                   <button
                     onClick={() => navigate(`/`, { state: { key: "Temp" } })}
@@ -108,7 +176,7 @@ export default function Navigation() {
                       active ? "bg-violet-500 text-white" : "text-gray-900"
                     } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                   >
-                    Edit
+                    Link
                   </button>
                 )}
               </Menu.Item>

@@ -20,10 +20,10 @@ export default function ImportExcel() {
         reader.readAsArrayBuffer(selectedFile);
         reader.onload = (e) => {
           setExcelFileError(null);
-          setExcelFile(e.target.result);
+          setExcelFile(e.target?.result);
         };
       } else {
-        setExcelFileError("Please select only excel file types");
+        setExcelFileError("Виберіть тип файлу Excel");
         setExcelFile(null);
       }
     } else {
@@ -65,7 +65,10 @@ export default function ImportExcel() {
           </h5>
           <input type="file" onChange={handleFile} required />
           {excelFileError && (
-            <div className="text-danger" style={{ marginTop: 5 + "px" }}>
+            <div
+              className="text-red-600 py-2 text-sm font-semibold"
+              style={{ marginTop: 5 + "px" }}
+            >
               {excelFileError}
             </div>
           )}
