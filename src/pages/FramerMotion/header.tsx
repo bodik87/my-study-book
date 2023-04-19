@@ -7,7 +7,8 @@ import {
   useMotionTemplate,
 } from "framer-motion";
 
-const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+const clamp = (value: number, min: number, max: number) =>
+  Math.min(Math.max(value, min), max);
 const scrollDistance = 100; // pixels user will scroll to complete header animation
 
 function useBoundedScroll(bounds: number) {

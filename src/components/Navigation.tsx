@@ -184,6 +184,47 @@ export default function Navigation() {
               </Menu.Item>
 
               <Menu.Item>
+                <Disclosure>
+                  {({ open }) => (
+                    <>
+                      <Disclosure.Button className="flex w-full justify-between rounded-lg bg-violet-100 px-4 py-2 text-left text-sm font-medium text-violet-900 hover:bg-violet-200 transition-all">
+                        <span>React</span>
+                        <ChevronUpIcon
+                          className={`${
+                            open ? "rotate-180 transform" : ""
+                          } h-5 w-5 text-violet-500`}
+                        />
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="pl-2 text-sm text-gray-500">
+                        <button
+                          onClick={() =>
+                            navigate(`/react/memo`, {
+                              state: { key: "Temp" },
+                            })
+                          }
+                          className={`bg-violet-50 hover:bg-violet-100 text-gray-900 flex w-full items-center rounded-md px-2 py-2 text-sm transition-all`}
+                        >
+                          memo, useMemo
+                        </button>
+                      </Disclosure.Panel>
+                      <Disclosure.Panel className="pl-2 text-sm text-gray-500">
+                        <button
+                          onClick={() =>
+                            navigate(`/`, {
+                              state: { key: "Temp" },
+                            })
+                          }
+                          className={`bg-violet-50 hover:bg-violet-100 text-gray-900 flex w-full items-center rounded-md px-2 py-2 text-sm transition-all`}
+                        >
+                          Link
+                        </button>
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
+              </Menu.Item>
+
+              <Menu.Item>
                 {({ active }) => (
                   <button
                     onClick={() => navigate(`/`, { state: { key: "Temp" } })}
