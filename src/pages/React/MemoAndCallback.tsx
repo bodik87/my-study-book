@@ -52,12 +52,12 @@ export default function MemoAndCallback() {
     </>
   );
 }
-
+// 1
 const Greeting: any = memo(function Hello({
   name = "Pass the name in props",
 }: {
   name?: string | undefined;
-}) {
+}): any {
   const newTime = new Date();
   console.log(
     `Greeting (with memo): ${newTime.getMinutes()}:${newTime.getSeconds()}`
@@ -66,7 +66,8 @@ const Greeting: any = memo(function Hello({
   return `Hello ${name}`;
 });
 
-function Hello({ name = "Pass the name in props" }) {
+// 2
+function Hello({ name = "Pass the name in props" }: { name: string }): any {
   const newTime = new Date();
   console.log(
     `Hello (without memo): ${newTime.getMinutes()}:${newTime.getSeconds()}`
@@ -75,11 +76,12 @@ function Hello({ name = "Pass the name in props" }) {
   return `Hello ${name}`;
 }
 
-function Hello({ name }: { name?: string | undefined }): string;
-
+// 3
 const Greeting2: any = memo(function HelloCallback({
   handleHelloCallback = () => {},
-}) {
+}: {
+  handleHelloCallback: () => void;
+}): any {
   const newTime = new Date();
   console.log(
     `HelloCallback (without memo): ${newTime.getMinutes()}:${newTime.getSeconds()}`

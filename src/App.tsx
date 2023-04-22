@@ -8,6 +8,7 @@ import ImportExcel from "./pages/Excel/ImportExcel";
 import MobileYouTube from "./pages/Design/MobileYouTube";
 import MobileApp_1 from "./pages/Design/MobileApp_1/MobileApp_1";
 import Memo from "./pages/React/Memo";
+import AnimatedTabs from "./pages/FramerMotion/AnimatedTabs";
 
 type Props = {};
 
@@ -18,7 +19,8 @@ export default function App({}: Props) {
       <Routes>
         <Route path="/" element={<Outlet />} />
         <Route index element={<HomePage />} />
-        <Route path="/multiselect" element={<MultiSelect />} />
+        <Route path="/framer/multiselect" element={<MultiSelect />} />
+        <Route path="/framer/animTabs" element={<AnimatedTabs />} />
 
         <Route path="/excel/export" element={<ExportToEcel />} />
         <Route path="/excel/import" element={<ImportExcel />} />
