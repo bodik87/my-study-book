@@ -10,6 +10,7 @@ import Memo from "./pages/React/Memo";
 import AnimatedTabs from "./pages/FramerMotion/AnimatedTabs";
 import Dock from "./pages/FramerMotion/Dock";
 import AnimatedCard from "./pages/FramerMotion/AnimatedCard";
+import Cards from "./pages/Design/Cards";
 
 type Props = {};
 
@@ -30,6 +31,7 @@ export default function App({ }: Props) {
 
         <Route path="/design/YouTubeMobile" element={<MobileYouTube />} />
         <Route path="/design/MobileApp_1" element={<MobileApp_1 />} />
+        <Route path="/design/cards" element={<Cards />} />
 
         <Route path="/react/memo" element={<Memo />} />
       </Routes>

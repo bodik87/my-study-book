@@ -209,6 +209,18 @@ export default function Navigation() {
                           MobileApp_1
                         </button>
                       </Disclosure.Panel>
+                      <Disclosure.Panel className="pl-2 text-sm text-gray-500">
+                        <button
+                          onClick={() =>
+                            navigate(`/design/cards`, {
+                              state: { key: "Temp" },
+                            })
+                          }
+                          className={`bg-emerald-50 hover:bg-emerald-100 text-gray-900 flex w-full items-center rounded-md px-2 py-2 text-sm transition-all`}
+                        >
+                          Cards
+                        </button>
+                      </Disclosure.Panel>
                     </>
                   )}
                 </Disclosure>
