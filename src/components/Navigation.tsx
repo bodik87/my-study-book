@@ -36,9 +36,8 @@ export default function Navigation() {
                   {({ active }) => (
                     <button
                       onClick={() => navigate(`/`, { state: { key: "Temp" } })}
-                      className={`${
-                        active ? "bg-violet-500 text-white" : "text-gray-900"
-                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                      className={`${active ? "bg-violet-500 text-white" : "text-gray-900"
+                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                     >
                       Home
                     </button>
@@ -53,9 +52,8 @@ export default function Navigation() {
                       <Disclosure.Button className="flex w-full justify-between rounded-lg bg-blue-100 px-4 py-2 text-left text-sm font-medium text-blue-900 hover:bg-blue-200 transition-all">
                         <span>TypeScript</span>
                         <ChevronUpIcon
-                          className={`${
-                            open ? "rotate-180 transform" : ""
-                          } h-5 w-5 text-blue-500`}
+                          className={`${open ? "rotate-180 transform" : ""
+                            } h-5 w-5 text-blue-500`}
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="pl-2 text-sm text-gray-500">
@@ -81,9 +79,8 @@ export default function Navigation() {
                       <Disclosure.Button className="flex w-full justify-between rounded-lg bg-violet-100 px-4 py-2 text-left text-sm font-medium text-violet-900 hover:bg-violet-200 transition-all">
                         <span>Framer Motion</span>
                         <ChevronUpIcon
-                          className={`${
-                            open ? "rotate-180 transform" : ""
-                          } h-5 w-5 text-violet-500`}
+                          className={`${open ? "rotate-180 transform" : ""
+                            } h-5 w-5 text-violet-500`}
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="pl-2 text-sm text-gray-500">
@@ -110,6 +107,16 @@ export default function Navigation() {
                           Animated Tabs
                         </button>
                       </Disclosure.Panel>
+                      <Disclosure.Panel className="pl-2 text-sm text-gray-500">
+                        <button
+                          onClick={() =>
+                            navigate(`/framer/dock`)
+                          }
+                          className={`bg-violet-50 hover:bg-violet-100 text-gray-900 flex w-full items-center rounded-md px-2 py-2 text-sm transition-all`}
+                        >
+                          Mac os Dock
+                        </button>
+                      </Disclosure.Panel>
                     </>
                   )}
                 </Disclosure>
@@ -122,9 +129,8 @@ export default function Navigation() {
                       <Disclosure.Button className="flex w-full justify-between rounded-lg bg-[#217346] px-4 py-2 text-left text-sm font-medium text-white hover:bg-[#308f5b] transition-all">
                         <span>Excel</span>
                         <ChevronUpIcon
-                          className={`${
-                            open ? "rotate-180 transform" : ""
-                          } h-5 w-5 text-white`}
+                          className={`${open ? "rotate-180 transform" : ""
+                            } h-5 w-5 text-white`}
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="pl-2 text-sm text-gray-500">
@@ -164,9 +170,8 @@ export default function Navigation() {
                       <Disclosure.Button className="flex w-full justify-between rounded-lg bg-emerald-100 px-4 py-2 text-left text-sm font-medium text-emerald-900 hover:bg-emerald-200 transition-all">
                         <span>Design</span>
                         <ChevronUpIcon
-                          className={`${
-                            open ? "rotate-180 transform" : ""
-                          } h-5 w-5 text-emerald-500`}
+                          className={`${open ? "rotate-180 transform" : ""
+                            } h-5 w-5 text-emerald-500`}
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="pl-2 text-sm text-gray-500">
@@ -205,9 +210,8 @@ export default function Navigation() {
                       <Disclosure.Button className="flex w-full justify-between rounded-lg bg-violet-100 px-4 py-2 text-left text-sm font-medium text-violet-900 hover:bg-violet-200 transition-all">
                         <span>React</span>
                         <ChevronUpIcon
-                          className={`${
-                            open ? "rotate-180 transform" : ""
-                          } h-5 w-5 text-violet-500`}
+                          className={`${open ? "rotate-180 transform" : ""
+                            } h-5 w-5 text-violet-500`}
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="pl-2 text-sm text-gray-500">
@@ -243,9 +247,8 @@ export default function Navigation() {
                 {({ active }) => (
                   <button
                     onClick={() => navigate(`/`, { state: { key: "Temp" } })}
-                    className={`${
-                      active ? "bg-violet-500 text-white" : "text-gray-900"
-                    } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                    className={`${active ? "bg-violet-500 text-white" : "text-gray-900"
+                      } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                   >
                     Link
                   </button>

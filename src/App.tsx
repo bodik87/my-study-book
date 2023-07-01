@@ -1,4 +1,3 @@
-import React from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
 import MultiSelect from "./pages/FramerMotion/MultiSelect";
 import Navigation from "./components/Navigation";
@@ -9,10 +8,11 @@ import MobileYouTube from "./pages/Design/MobileYouTube";
 import MobileApp_1 from "./pages/Design/MobileApp_1/MobileApp_1";
 import Memo from "./pages/React/Memo";
 import AnimatedTabs from "./pages/FramerMotion/AnimatedTabs";
+import Dock from "./pages/FramerMotion/Dock";
 
 type Props = {};
 
-export default function App({}: Props) {
+export default function App({ }: Props) {
   return (
     <div className="p-4">
       <Navigation />
@@ -21,6 +21,7 @@ export default function App({}: Props) {
         <Route index element={<HomePage />} />
         <Route path="/framer/multiselect" element={<MultiSelect />} />
         <Route path="/framer/animTabs" element={<AnimatedTabs />} />
+        <Route path="/framer/dock" element={<Dock />} />
 
         <Route path="/excel/export" element={<ExportToEcel />} />
         <Route path="/excel/import" element={<ImportExcel />} />
