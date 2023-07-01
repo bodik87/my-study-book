@@ -15,14 +15,13 @@ export default function AnimatedTabs() {
   let [activeTab, setActiveTab] = useState(tabs[0].id);
 
   return (
-    <div className="flex space-x-1">
+    <div className="w-fit mx-auto flex space-x-1">
       {tabs.map((tab) => (
         <button
           key={tab.id}
           onClick={() => setActiveTab(tab.id)}
-          className={`${
-            activeTab === tab.id ? "" : "hover:text-black/60"
-          } relative rounded-full px-3 py-1.5 text-sm font-medium text-black transition focus-visible:outline-2`}
+          className={`${activeTab === tab.id ? "" : "hover:text-black/60"
+            } relative rounded-full px-3 py-3 text-sm font-medium text-black transition focus-visible:outline-2`}
           style={{
             WebkitTapHighlightColor: "transparent",
           }}

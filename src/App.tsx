@@ -9,6 +9,7 @@ import MobileApp_1 from "./pages/Design/MobileApp_1/MobileApp_1";
 import Memo from "./pages/React/Memo";
 import AnimatedTabs from "./pages/FramerMotion/AnimatedTabs";
 import Dock from "./pages/FramerMotion/Dock";
+import AnimatedCard from "./pages/FramerMotion/AnimatedCard";
 
 type Props = {};
 
@@ -22,6 +23,7 @@ export default function App({ }: Props) {
         <Route path="/framer/multiselect" element={<MultiSelect />} />
         <Route path="/framer/animTabs" element={<AnimatedTabs />} />
         <Route path="/framer/dock" element={<Dock />} />
+        <Route path="/framer/animatedCard" element={<AnimatedCard />} />
 
         <Route path="/excel/export" element={<ExportToEcel />} />
         <Route path="/excel/import" element={<ImportExcel />} />

@@ -76,7 +76,8 @@ export default function Navigation() {
                 <Disclosure>
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="flex w-full justify-between rounded-lg bg-violet-100 px-4 py-2 text-left text-sm font-medium text-violet-900 hover:bg-violet-200 transition-all">
+                      <Disclosure.Button className="flex w-full justify-between items-center rounded-lg bg-violet-100 px-4 py-2 text-left text-sm font-medium text-violet-900 hover:bg-violet-200 transition-all">
+                        <img src="/framer.png" alt="framer" />
                         <span>Framer Motion</span>
                         <ChevronUpIcon
                           className={`${open ? "rotate-180 transform" : ""
@@ -115,6 +116,16 @@ export default function Navigation() {
                           className={`bg-violet-50 hover:bg-violet-100 text-gray-900 flex w-full items-center rounded-md px-2 py-2 text-sm transition-all`}
                         >
                           Mac os Dock
+                        </button>
+                      </Disclosure.Panel>
+                      <Disclosure.Panel className="pl-2 text-sm text-gray-500">
+                        <button
+                          onClick={() =>
+                            navigate(`/framer/animatedCard`)
+                          }
+                          className={`bg-violet-50 hover:bg-violet-100 text-gray-900 flex w-full items-center rounded-md px-2 py-2 text-sm transition-all`}
+                        >
+                          Animated Card
                         </button>
                       </Disclosure.Panel>
                     </>
