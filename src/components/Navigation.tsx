@@ -121,6 +121,16 @@ export default function Navigation() {
                       <Disclosure.Panel className="pl-2 text-sm text-gray-500">
                         <button
                           onClick={() =>
+                            navigate(`/framer/carousel`)
+                          }
+                          className={`bg-violet-50 hover:bg-violet-100 text-gray-900 flex w-full items-center rounded-md px-2 py-2 text-sm transition-all`}
+                        >
+                          Carousel
+                        </button>
+                      </Disclosure.Panel>
+                      <Disclosure.Panel className="pl-2 text-sm text-gray-500">
+                        <button
+                          onClick={() =>
                             navigate(`/framer/animatedCard`)
                           }
                           className={`bg-violet-50 hover:bg-violet-100 text-gray-900 flex w-full items-center rounded-md px-2 py-2 text-sm transition-all`}

@@ -7,6 +7,9 @@ export default function ImportExcel() {
 
   const [excelData, setExcelData] = useState<any>(null);
 
+  console.log(excelData);
+
+
   const fileTypes = [
     "application/vnd.ms-excel",
     "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
@@ -128,7 +131,7 @@ const Data = ({ excelData }: any) => {
         <tbody>
           {excelData.map((bodyData: any) => (
             <tr key={bodyData.Id} className="bg-white border-b">
-              <th className="px-6 py-4">{bodyData.Id}</th>
+              <th className="px-6 py-4">{bodyData.id}</th>
               <th className="px-6 py-4">{bodyData.Title}</th>
               <th className="px-6 py-4">{bodyData.Price}</th>
             </tr>

@@ -1,29 +1,12 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 import { useState } from "react";
-import useKeypress from "react-use-keypress";
 
 const images = [
-  "/images/1.jpg",
-  "/images/2.jpg",
-  "/images/3.jpg",
-  "/images/4.jpg",
-  "/images/5.jpg",
-  "/images/6.jpg",
-  "/images/7.jpg",
-  "/images/8.jpg",
-  "/images/9.jpg",
-  "/images/10.jpg",
-  "/images/11.jpg",
-  "/images/12.jpg",
-  "/images/13.jpg",
-  "/images/14.jpg",
-  "/images/15.jpg",
-  "/images/16.jpg",
-  "/images/17.jpg",
-  "/images/18.jpg",
-  "/images/19.jpg",
-  "/images/20.jpg",
+  "/img_react_anim/1.webp",
+  "/img_react_anim/2.webp",
+  "/img_react_anim/3.webp",
+
 ];
 
 const collapsedAspectRatio = 1 / 3;
@@ -31,20 +14,8 @@ const fullAspectRatio = 3 / 2;
 const gap = 2;
 const margin = 12;
 
-export default function Page() {
+export default function Carousel() {
   const [index, setIndex] = useState(0);
-
-  useKeypress("ArrowRight", () => {
-    if (index + 1 < images.length) {
-      setIndex(index + 1);
-    }
-  });
-
-  useKeypress("ArrowLeft", () => {
-    if (index > 0) {
-      setIndex((i) => i - 1);
-    }
-  });
 
   return (
     <MotionConfig transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
@@ -96,11 +67,10 @@ export default function Page() {
             <motion.div
               initial={false}
               animate={{
-                x: `-${
-                  index * 100 * (collapsedAspectRatio / fullAspectRatio) +
+                x: `-${index * 100 * (collapsedAspectRatio / fullAspectRatio) +
                   index * gap +
                   margin
-                }%`,
+                  }%`,
               }}
               style={{ aspectRatio: fullAspectRatio, gap: `${gap}%` }}
               className="flex h-14"
@@ -112,7 +82,7 @@ export default function Page() {
                   whileHover={{ opacity: 1 }}
                   initial={false}
                   animate={i === index ? "active" : "inactive"}
-                  className="flex-shrink-0"
+                  className="flex-shrink-0 w-12"
                   variants={{
                     active: {
                       marginLeft: `${margin}%`,
@@ -128,7 +98,7 @@ export default function Page() {
                     },
                   }}
                 >
-                  <motion.img src={image} className="h-full object-cover" />
+                  <motion.img src={image} className="w-full h-full object-cover" />
                 </motion.button>
               ))}
             </motion.div>

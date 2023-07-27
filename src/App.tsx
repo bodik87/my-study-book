@@ -11,6 +11,7 @@ import AnimatedTabs from "./pages/FramerMotion/AnimatedTabs";
 import Dock from "./pages/FramerMotion/Dock";
 import AnimatedCard from "./pages/FramerMotion/AnimatedCard";
 import Cards from "./pages/Design/Cards";
+import Carousel from "./pages/FramerMotion/carousel";
 
 type Props = {};
 
@@ -25,6 +26,7 @@ export default function App({ }: Props) {
         <Route path="/framer/animTabs" element={<AnimatedTabs />} />
         <Route path="/framer/dock" element={<Dock />} />
         <Route path="/framer/animatedCard" element={<AnimatedCard />} />
+        <Route path="/framer/carousel" element={<Carousel />} />
 
         <Route path="/excel/export" element={<ExportToEcel />} />
         <Route path="/excel/import" element={<ImportExcel />} />
