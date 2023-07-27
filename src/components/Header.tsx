@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
-import MenuItem from "./MenuItem";
 
 // @ts-ignore: Unreachable code error
 export default function Header({ setVisibleMenu }) {
@@ -31,11 +30,6 @@ export default function Header({ setVisibleMenu }) {
         } fixed top-20 left-0 w-full transition-all duration-300 px-4 md:px-12 md:py-1 py-3 flex items-center justify-between whitespace-nowrap z-20`}
     >
       <div className="text-xl font-bold">LOGO</div>
-
-      <div className="hidden md:flex">
-        <MenuItem title="Елемент 1">Контент елементу меню</MenuItem>
-        <MenuItem title="Елемент 2">Контент другого елементу меню</MenuItem>
-      </div>
 
       {/* Contacts */}
       <div className="flex items-center gap-2">
