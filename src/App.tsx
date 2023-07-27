@@ -12,13 +12,36 @@ import Dock from "./pages/FramerMotion/Dock";
 import AnimatedCard from "./pages/FramerMotion/AnimatedCard";
 import Cards from "./pages/Design/Cards";
 import Carousel from "./pages/FramerMotion/carousel";
+import Route_1 from "./pages/FramerMotion/AnimatedRoutes/Route_1";
+import Route_2 from "./pages/FramerMotion/AnimatedRoutes/Route_2";
+import { AnimatePresence } from "framer-motion";
+import { CursorContextProvider } from "./context/CursorContext";
+import HideVisibleNavbar from "./pages/FramerMotion/HideVisibleNavbar";
 
 type Props = {};
+
+const animatedRoutes = [
+  { path: "/framer/route1", name: "Route1", Component: Route_1 },
+  { path: "/framer/route2", name: "Route2", Component: Route_2 },
+];
+
+const routeComponents = animatedRoutes.map(({ path, Component }) => (
+  <Route key={path} path={path} element={<Component />} />
+));
 
 export default function App({ }: Props) {
   return (
     <div className="p-4">
       <Navigation />
+
+      <AnimatePresence>
+        <CursorContextProvider>
+          <Routes location={location} key={location.pathname}>
+            {routeComponents}
+          </Routes>
+        </CursorContextProvider>
+      </AnimatePresence>
+
       <Routes>
         <Route path="/" element={<Outlet />} />
         <Route index element={<HomePage />} />
@@ -27,6 +50,8 @@ export default function App({ }: Props) {
         <Route path="/framer/dock" element={<Dock />} />
         <Route path="/framer/animatedCard" element={<AnimatedCard />} />
         <Route path="/framer/carousel" element={<Carousel />} />
+        <Route path="/framer/hidenav" element={<HideVisibleNavbar />} />
+
 
         <Route path="/excel/export" element={<ExportToEcel />} />
         <Route path="/excel/import" element={<ImportExcel />} />

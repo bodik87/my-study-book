@@ -6,6 +6,11 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+:root {
+  --transform: 0.3s cubic-bezier(0.12, 0.77, 0.16, 0.93);
+  --blue: #3e12e3;
+}
+
 body {
   @apply bg-slate-200;
 }
@@ -24,4 +29,49 @@ body {
   line-height: 1;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  @apply w-2 h-1.5;
+}
+::-webkit-scrollbar-track {
+  @apply bg-white rounded-md m-0;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-red-500 rounded-none;
+}
+
+/* Button */
+.btn {
+  height: 40px;
+  padding: 0rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 2.5rem;
+  font-weight: 700;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+  transition: 0.3s cubic-bezier(0.12, 0.77, 0.16, 0.93);
+  overflow: hidden;
+}
+.btn:hover span {
+  height: 100%;
+}
+.btn:hover .childDiv {
+  background-color: #fff;
+}
+.span {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0%;
+  background-color: #3e12e3;
+  transition: 0.3s cubic-bezier(0.12, 0.77, 0.16, 0.93);
+  z-index: -1;
+  border-radius: 2.5rem;
 }
