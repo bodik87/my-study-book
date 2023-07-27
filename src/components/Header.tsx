@@ -28,7 +28,7 @@ export default function Header({ setVisibleMenu }) {
   return (
     <header
       className={`${!scrollUp && "-translate-y-full"} ${transparent ? "bg-transparent" : "bg-white shadow-md"
-        } fixed top-0 left-0 w-full transition-all duration-300 px-4 md:px-12 md:py-1 py-3 flex items-center justify-between whitespace-nowrap z-20`}
+        } fixed top-20 left-0 w-full transition-all duration-300 px-4 md:px-12 md:py-1 py-3 flex items-center justify-between whitespace-nowrap z-20`}
     >
       <div className="text-xl font-bold">LOGO</div>
 
