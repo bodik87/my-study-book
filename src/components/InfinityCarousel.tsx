@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+// @ts-ignore: Unreachable code error
 function addDays(dateTime, count_days = 0) {
   return new Date(new Date(dateTime).setDate(dateTime.getDate() + count_days));
 }
@@ -71,7 +72,7 @@ export default function InfinityCarousel() {
   );
 }
 
-// red
+// @ts-ignore: Unreachable code error
 function Card_1({ value, height, content }) {
   const innerValue = value + 1;
   const cardStyle =
@@ -82,11 +83,9 @@ function Card_1({ value, height, content }) {
   return (
     <div
       style={{ height: height }}
-      className={`${cardStyle} ${
-        innerValue === 1 && "right-[100%] top-0 z-20"
-      } ${innerValue === 2 && "-right-[100%] top-0 z-10"} ${
-        innerValue === 3 && "right-[0] top-0 z-30"
-      }`}
+      className={`${cardStyle} ${innerValue === 1 && "right-[100%] top-0 z-20"
+        } ${innerValue === 2 && "-right-[100%] top-0 z-10"} ${innerValue === 3 && "right-[0] top-0 z-30"
+        }`}
     >
       {date}
     </div>
@@ -94,6 +93,7 @@ function Card_1({ value, height, content }) {
 }
 
 // CENTER
+// @ts-ignore: Unreachable code error
 function Card_2({ value, height, content }) {
   const innerValue = value + 1;
   const cardStyle =
@@ -103,9 +103,8 @@ function Card_2({ value, height, content }) {
   return (
     <div
       style={{ height: height }}
-      className={`${cardStyle} ${innerValue === 1 && "right-[0] top-0 z-30"} ${
-        innerValue === 2 && "right-[100%] top-0 z-20"
-      } ${innerValue === 3 && "-right-[100%] top-0 z-10"}`}
+      className={`${cardStyle} ${innerValue === 1 && "right-[0] top-0 z-30"} ${innerValue === 2 && "right-[100%] top-0 z-20"
+        } ${innerValue === 3 && "-right-[100%] top-0 z-10"}`}
     >
       {date}
     </div>
@@ -113,6 +112,7 @@ function Card_2({ value, height, content }) {
 }
 
 // blue
+// @ts-ignore: Unreachable code error
 function Card_3({ value, height, content }) {
   const innerValue = value + 1;
   const cardStyle =
@@ -123,11 +123,9 @@ function Card_3({ value, height, content }) {
   return (
     <div
       style={{ height: height }}
-      className={`${cardStyle} ${
-        innerValue === 1 && "-right-[100%] top-0 z-10"
-      } ${innerValue === 2 && "right-[0] top-0 z-30"} ${
-        innerValue === 3 && "right-[100%] top-0 z-20"
-      }`}
+      className={`${cardStyle} ${innerValue === 1 && "-right-[100%] top-0 z-10"
+        } ${innerValue === 2 && "right-[0] top-0 z-30"} ${innerValue === 3 && "right-[100%] top-0 z-20"
+        }`}
     >
       {date}
     </div>

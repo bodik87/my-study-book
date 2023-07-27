@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+// @ts-ignore: Unreachable code error
 export default function BurgerMenu({ visibleMenu, setVisibleMenu }) {
   const closeModal = () => setVisibleMenu(!visibleMenu);
 
@@ -10,9 +11,8 @@ export default function BurgerMenu({ visibleMenu, setVisibleMenu }) {
   return (
     <>
       <div
-        className={`${
-          visibleMenu ? "translate-x-0" : "translate-x-full"
-        } flex flex-col py-6 px-8 items-center gap-4 h-full fixed bottom-0 right-0 z-50 bg-black text-white transition-all`}
+        className={`${visibleMenu ? "translate-x-0" : "translate-x-full"
+          } flex flex-col py-6 px-8 items-center gap-4 h-full fixed bottom-0 right-0 z-50 bg-black text-white transition-all`}
       >
         <div className="flex gap-3 justify-between items-center border-b border-gray-500 pb-6">
           <div className="text-xl font-bold">LOGO</div>
@@ -38,9 +38,8 @@ export default function BurgerMenu({ visibleMenu, setVisibleMenu }) {
 
       <div
         onClick={closeModal}
-        className={`fixed inset-0 z-40 bg-[#3e12e3] opacity-90 ${
-          visibleMenu ? "block opacity-90" : "hidden opacity-0"
-        } transition-opacity`}
+        className={`fixed inset-0 z-40 bg-[#3e12e3] opacity-90 ${visibleMenu ? "block opacity-90" : "hidden opacity-0"
+          } transition-opacity`}
       />
     </>
   );

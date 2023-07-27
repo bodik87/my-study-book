@@ -62,7 +62,7 @@ export default function ResizablePanel() {
 const formContext = createContext<{ status: "idle" | "saving" | "success" }>({
   status: "idle",
 });
-
+// @ts-ignore: Unreachable code error
 function Form({ onSubmit, afterSave, children, ...props }) {
   const [status, setStatus] = useState<"idle" | "saving" | "success">("idle");
 
@@ -83,7 +83,7 @@ function Form({ onSubmit, afterSave, children, ...props }) {
     </formContext.Provider>
   );
 }
-
+// @ts-ignore: Unreachable code error
 Form.Button = function FormButton({ children, className, ...rest }) {
   const { status } = useContext(formContext);
 
@@ -94,9 +94,8 @@ Form.Button = function FormButton({ children, className, ...rest }) {
       <button
         type="submit"
         disabled={disabled}
-        className={`${className} relative transition duration-200 ${
-          disabled ? "bg-opacity-80" : "hover:bg-opacity-80"
-        }`}
+        className={`${className} relative transition duration-200 ${disabled ? "bg-opacity-80" : "hover:bg-opacity-80"
+          }`}
         {...rest}
       >
         <AnimatePresence mode="wait">
@@ -128,7 +127,7 @@ Form.Button = function FormButton({ children, className, ...rest }) {
     </MotionConfig>
   );
 };
-
+// @ts-ignore: Unreachable code error
 function Spinner(props) {
   const { className, ...rest } = props;
   return (

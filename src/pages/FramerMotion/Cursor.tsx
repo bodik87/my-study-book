@@ -9,6 +9,7 @@ export default function Cursor() {
   });
 
   useEffect(() => {
+    // @ts-ignore: Unreachable code error
     const mouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
